@@ -14,17 +14,20 @@ metadata:
 {{- end }}
 spec:
   rules:
-  {{- range .Values.ingress.hosts }}
-    - host: {{ . }}
       http:
         paths:
-          - backend:
-              serviceName: {{ $fullName }}
-              servicePort: 34197
-    - host: {{ . }}
-      http:
-        paths:
-          - backend:
-              serviceName: {{ $fullName }}
-              servicePort: 27015
+          - path: /*
+            pathType: Prefix
+            backend:
+              service:
+                Name: {{ $fullName }}
+                Port: 
+                  number: 34197
+          - path: /*
+            pathType: Prefix
+            backend:
+              service:
+                Name: {{ $fullName }}
+                Port:
+                  number: 27015
   {{ end }}
