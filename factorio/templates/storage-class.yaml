@@ -7,4 +7,6 @@ metadata:
     chart: {{ template "factorio.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+    provisioner: kubernetes.io/no-provisioner
+    volumeBindingMode: WaitForFirstConsumer
 reclaimPolicy: Retain
