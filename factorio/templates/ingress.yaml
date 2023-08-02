@@ -23,4 +23,4 @@ metadata:
       name: factorio-2
   selector:
     app: {{ $fullName }}
-  {{ end }}
+{{- end }}
