@@ -11,6 +11,7 @@ ingress:
   hosts:
     - factorio.noahh.io
     - factorio.noahhuppert.com
-storageClass:
-  name: {{ template "factorio.fullname" . }}-storage-class
-  template: {{ template "local-storage-class" . }}
+  storageClass:
+    create: true
+    name: {{ template "factorio.fullname" . }}-storage-class
+    template: {{ template "local-storage-class" . }}
