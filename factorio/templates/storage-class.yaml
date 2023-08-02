@@ -7,5 +7,4 @@ metadata:
     chart: {{ template "factorio.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-provisioner: kubernetes.io/gce-pd
 reclaimPolicy: Retain
