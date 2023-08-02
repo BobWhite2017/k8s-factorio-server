@@ -16,10 +16,12 @@ spec:
   type: LoadBalancer
   ports:
     - port: 34197
+      protocol: UDP
       targetPort: 34197
       name: factorio-1
     - port: 27015
       targetPort: 27015
+      protocol: TCP
       name: factorio-2
   selector:
     app: {{ $fullName }}
