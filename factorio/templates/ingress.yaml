@@ -21,11 +21,10 @@ spec:
           - backend:
               serviceName: {{ $fullName }}
               servicePort: 34197
-            path: /
-            pathType: ImplementationSpecific
+    - host: {{ . }}
+      http:
+        paths:
           - backend:
               serviceName: {{ $fullName }}
               servicePort: 27015
-            path: /
-            pathType: ImplementationSpecific
   {{ end }}
