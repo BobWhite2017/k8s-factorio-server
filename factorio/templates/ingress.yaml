@@ -11,24 +11,16 @@ metadata:
 {{- with .Values.ingress.annotations }}
   annotations:
 {{ toYaml . | indent 4 }}
-{{- end }}
-spec:
-  rules:
-  {{- range .Values.ingress.hosts }}
-      http:
-        paths:
-          - path: /*
-            pathType: Prefix
-            backend:
-              service:
-                Name: {{ $fullName }}
-                Port: 
-                  number: 34197
-          - path: /*
-            pathType: Prefix
-            backend:
-              service:
-                Name: {{ $fullName }}
-                Port:
-                  number: 27015
+# {{- end }}
+  spec:
+  type: LoadBalancer
+  ports:
+    - port: 34197
+      targetPort: 34197
+      name: factorio-1
+    - port: 27015
+      targetPort: 27015
+      name: factorio-2
+  selector:
+    app: {{ $fullName }}
   {{ end }}
