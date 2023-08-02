@@ -3,8 +3,11 @@ apiVersion: v1
 metadata:
   name: factorio-pvc
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
+  hostPath:
+      path: "/factorio"
