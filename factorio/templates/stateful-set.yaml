@@ -30,9 +30,9 @@ spec:
             - containerPort: 27015
               name: factorio-2
           volumeMounts:
-            - name: factorio-data
+            - name: factorio-pv
               mountPath: /factorio
       volumes:
-        - name: factorio-data
+        - name: factorio-pv
           persistentVolumeClaim:
             claimName: factorio-pvc
