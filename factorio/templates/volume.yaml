@@ -13,7 +13,7 @@ spec:
       app: {{ template "factorio.name" . }}
       release: {{ .Release.Name }}
 
-  storageClassName: {{ template "factorio.fullname" . }}-storage-class
+  storageClassName: local-path
 
   accessModes:
     - ReadWriteOnce
