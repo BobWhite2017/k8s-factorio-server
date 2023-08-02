@@ -7,6 +7,11 @@ ingress:
   annotations:
     external-dns.alpha.kubernetes.io/hostname: "factorio.noahh.io., factorio.noahhuppert.com."
     kubernetes.io/ingress.class: "gce"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
   hosts:
     - factorio.noahh.io
     - factorio.noahhuppert.com
+storageClass:
+  create: true
+  name: {{ template "factorio.fullname" . }}-storage-class
+  template: {{ template "local-storage-class" . }}
