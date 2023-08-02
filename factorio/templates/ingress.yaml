@@ -30,4 +30,4 @@ spec:
                 Name: {{ $fullName }}
                 Port:
                   number: 27015
-  {{ end }}
+{{ end }}
