@@ -1,6 +1,6 @@
 {{- $fullName := include "factorio.fullname" . -}}
 apiVersion: networking.k8s.io/v1
-kind: Ingress
+kind: LoadBalancer
 metadata:
   name: {{ $fullName }}
   labels:
