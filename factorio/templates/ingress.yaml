@@ -11,8 +11,8 @@ metadata:
 {{- with .Values.ingress.annotations }}
   annotations:
 {{ toYaml . | indent 4 }}
-# {{- end }}
-  spec:
+{{- end }}
+spec:
   type: LoadBalancer
   ports:
     - port: 34197
@@ -23,4 +23,3 @@ metadata:
       name: factorio-2
   selector:
     app: {{ $fullName }}
-{{- end }}
